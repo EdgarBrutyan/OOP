@@ -11,7 +11,7 @@ public:
 
 	Grass()
 	{
-		count = 10; // предположим всегда имеем столько
+		count = 10; // suppose that we have always 10
 	}
 
 
@@ -28,7 +28,7 @@ class Sun {
 private:
 
 	bool glow;
-	int X; // условно пердставим что начиная с 6 утра до 19 вечера оно сияет 
+	int X; // time when sun glows
 	int Y; 
 
 public:
@@ -129,19 +129,24 @@ int main()
 	World world;
 	
 	std::cout << "Enter the current time";
-	int time = 0;
-	std::cin >> time;
-	world.sun.glow_or_not(time);
+	int time_ = 0;
+	std::cin >> time_;
+	world.sun.glow_or_not(time_);
 	bool _glow = world.sun.get_glow();
 
 	while (_glow)
 	{
 		world.frog.move();
-		world.tree.photosynthesis(time);
+		std::cout << "\n";
+		world.tree.photosynthesis(time_);
+		std::cout << "\n";
+		std::cin >> time_;
+		world.sun.glow_or_not(time_);
+		_glow = world.sun.get_glow();
 	}
 
 	world.frog.sleep();
-	world.tree.stop_photosynthesis(time);
+	world.tree.stop_photosynthesis(time_);
 
 	std::cout << "Time for sleep, the sun does not glow";
 }
