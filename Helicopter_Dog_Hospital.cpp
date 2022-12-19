@@ -111,6 +111,12 @@ public:
     friend class  Hospital;
 };
 
+
+
+
+// Hospital
+
+
 class  Hospital {
 
 
@@ -158,6 +164,12 @@ public:
 
 
 };
+
+
+
+
+// Helicopter
+
 
 class Helicopter {
 
