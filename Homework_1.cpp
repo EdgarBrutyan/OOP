@@ -6,13 +6,13 @@ class Book {
 private:
     std::string title;
     std::string author;
-
+    
 public:
     void set_title(const std::string& title)
     {
         this->title = title;
     }
-
+    
     void set_author(const std::string& author)
     {
         this->author = author;
@@ -108,9 +108,9 @@ public:
 
         if (patasxan == "Yes")
         {
-            Book book; 
+            Book book;       
             std::cout << "enter the titile of book and its author";
-
+            
             std::string title, author;
             std::cin >> title >> author;
             lib.giving_book(book);
@@ -128,6 +128,7 @@ public:
             lib.add_book(book);
         }
     }
+    
     void read(const Book& book)
     {
         std::cout << "The student is reading the" << book.get_name() << "of" << book.get_author();
