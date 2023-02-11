@@ -1,37 +1,27 @@
 #pragma once
 #include<iostream>
-#include "Date.cpp"
+#include "Cell.h"
 
-enum class Color {
-    Red = 0,
-    Black = 1, 
-    Green = 2,
-    White = 3
-};
-
-class Cell {
+class Spreadsheet {
 public:
-    Cell();
-
-    Cell(const std::string& value);
-
-    void set_value(const std::string& value);
-
-    std::string getValue() const;
-
-    int toInt() const;
-
-    double toDouble() const;
-
-    Date toDate() const;
-
-    void reset();
-
-    void setColor(Color& color);
-
-    Color getColor() const; 
-   
+    void swapCells(Cell& cell1, Cell& cell2);
+    
+    void setCellAT(size_t row, size_t column, Cell& cell);
+    
+    void setCellAt(size_t row, size_t column, const std::string& str);
+    
+    bool ISFree(size_t row, size_t column);
+    
+    Cell& getCell(size_t row, size_t column);
+    
+    void swapColumn(size_t column1, size_t column2); 
+    
+    void swapRows(size_t row1, size_t row2);
+    
+    void addRow(size_t pos);
+    
+    void removeColumn(size_t pos);
+    
 private:
-    std::string m_value;
-    Color m_color;
+    std::vector<std::vector<Cell>> spreadsheet;
 };
