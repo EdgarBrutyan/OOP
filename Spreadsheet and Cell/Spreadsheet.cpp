@@ -91,7 +91,6 @@ void Spreadsheet::swapRows(size_t row1, size_t row2)
 
 void Spreadsheet::addRow(size_t pos)
 {
-
 	if (pos > spreadsheet.size())
 	{
 		return;
